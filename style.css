@@ -74,8 +74,8 @@ aside{
     padding:20px;
     margin: 20px;
     
-    min-width: var(--aside-width);
-    width: var(--aside-width);
+    min-width: 160px;
+    max-width: var(--aside-width);
     flex-grow: 0;
     
     border-radius:15px;
@@ -194,7 +194,9 @@ aside{
     gap:10px;
     margin-top:20px;
 
-    max-width: 23vw;
+    align-items: center;
+    justify-content: left;
+    max-width: var(--aside-width);
 
     width:max-content;
     flex-wrap:wrap;
@@ -236,6 +238,12 @@ aside{
     color:var(--text-color-main);
 }
 
+#side-panel-footer{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 
 
@@ -250,7 +258,7 @@ aside{
 
     overflow:scroll;
     max-height:100%;
-    max-width:100%;
+    max-width:inherit;
 }
 
 .body-section-row{
@@ -280,11 +288,7 @@ aside{
 }
 
 .music-widget{
-    /*
-    background-image: url("https://upload.wikimedia.org/wikipedia/en/e/e3/Itzy_-_Gold.jpg");
-    background-size:cover;
-    background-position: center;
-    */
+    min-height: 120px;
 }
 
 .photo-widget{
@@ -292,6 +296,7 @@ aside{
     background-size: cover;
     min-width:20vw;
     max-width:500vw;
+    min-height:120px;
     flex-grow: 6;
 }
 
@@ -317,9 +322,82 @@ aside{
     height:30vh;
     
     background-image:url("https://pbs.twimg.com/media/FpVs9b4aUAAcu5o?format=jpg&name=medium");
-    background-size:cover;
+    background-size: cover;
     background-position:center;
-    background-size: 170%;
     
     border-radius:10px;
+}
+
+
+
+
+@media only screen and (max-width: 767px){
+    #main-cont{
+        flex-wrap:wrap;
+    }
+
+    aside{
+        min-width:none;
+        width:50%;
+        max-width:none;
+        flex-grow:1;
+        order:0;
+    }
+
+    #side-panel-content{
+        display:flex;
+        flex-direction:column;
+        width:100%;
+        flex-grow:1;
+        
+        justify-content: left;
+        align-items:start;
+    
+        z-index: 20;
+    }
+
+    #socials{
+        display:flex;
+        flex-direction: row;
+
+        gap:10px;
+        margin-top:20px;
+    
+    
+        min-width:100%;
+        flex-wrap:wrap;
+    }
+
+    #socials > *{
+        padding:15px;
+        flex-grow:1;
+        justify-content: center;
+    }
+
+    .social-title{
+        display:none;
+    }
+
+
+    #body-cont{
+        margin:0px 20px 0px 20px;
+        flex-wrap:wrap;
+    }
+
+    #body-cont > *{
+        flex-direction: column;
+        row-gap: 20px;
+        min-width:50%;
+        max-width:100%;
+    }
+
+    #body-cont .music-widget{
+        display:none;
+        order:1;
+    }
+
+    #body-cont .photo-widget{
+        display:none;
+        order:0;
+    }
 }
