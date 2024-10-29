@@ -1,0 +1,97 @@
+function getSidePanel(){
+    return new Promise((resolve, reject) => {
+        var sidePanel = document.getElementById('side-panel');
+    
+        fetch('../views/components/sidebar.html')
+        .then(response => {
+            return response.text();
+        })
+        .then(html => {
+            sidePanel.innerHTML = html;
+        })
+        .catch(error => {
+            console.error("Failed to fetch component: ", error);
+        })
+    })
+}
+
+const routes = {
+    '/': {
+        linkLabel: 'Home',
+        content: 'I am in home page'
+    },
+    '/about': {
+        linkLabel: 'About',
+        content: 'I am in about page'
+    },
+    '/projects': {
+        linkLabel: 'Projects',
+        content: 'I am in projects page'
+    }
+};
+
+const app = document.querySelector('#body-cont');
+const nav = document.querySelector('#sidepanel-navigation');
+
+// function to create new nav items
+const renderNavLinks = () => {
+    const navFragment = document.createDocumentFragment();
+    Object.keys(routes).forEach(route => {
+        const { linkLabel } = routes[route];
+
+        const linkElement = document.createElement('a');
+        linkElement.href = route;
+        linkElement.textContent = linkLabel;
+        linkElement.className = 'nav-link';
+        navFragment.appendChild(linkElement);
+    });
+
+    nav.append(navFragment);
+    alert('help me');
+};
+
+// generate click handlers
+const registerNavLinks = () => {
+    nav.addEventListener('click', (e) => {
+        e.preventDefault();
+        const { href } = e.target;
+        history.pushState({}, "", href);
+        navigate(e);
+    });
+};
+
+const renderContent = route => app.innerHTML = routes[route].content;
+const navigate = e => {
+    const route = e.target.pathname;
+    history.pushState({}, "", route);
+    renderContent(route);
+};
+
+const registerBrowserBackAndForth = () => {
+    window.onpopstate = function (e) {
+        const route = location.pathname;
+        renderContent(route);
+    };
+};
+
+const renderInitialPage = () => {
+    const route = location.pathname;
+    renderContent(route);
+};
+
+document.onload = () => {
+    
+}
+
+
+(async function bootup(){
+    try{
+        await getSidePanel();
+        renderNavLinks();
+        registerNavLinks();
+        registerBrowserBackAndForth();
+    }
+    catch (error){
+        console.error('Error');
+    }
+})();

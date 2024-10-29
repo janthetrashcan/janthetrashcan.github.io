@@ -202,6 +202,10 @@ aside{
     flex-wrap:wrap;
 }
 
+.social-title{
+    display:none;
+}
+
 .button-light{
     display:flex;
     flex-direction: row;
@@ -244,6 +248,32 @@ aside{
     justify-content: center;
     align-items: center;
 }
+
+#sidepanel-navigation{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: var(--aside-width);
+
+    gap: 5px;
+    margin-top: 40px;
+}
+
+.nav-link, .inactive{
+    background: none;
+    padding: 10px 20px 10px 20px;
+    border-radius:30px;
+
+    transition: all 200ms linear;
+}
+
+.nav-link:hover, .active{
+    background-color: var(--color-bg-darker-hover);
+}
+
+
+
 
 
 
@@ -321,7 +351,7 @@ aside{
     width:70vw;
     height:30vh;
     
-    background-image:url("https://pbs.twimg.com/media/FpVs9b4aUAAcu5o?format=jpg&name=medium");
+    background-image:url("");
     background-size: cover;
     background-position:center;
     
