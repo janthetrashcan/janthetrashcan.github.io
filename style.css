@@ -1,17 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css');
 
 :root{
-    --color-bg: #efefef;
-    --color-bg-darker: #dfdfdf;
-    --color-bg-darker-hover: #d1d1d1;
-    --color-outline: #cfcfcf;
-    --text-color-main: #121212;
+    --color-bg: rgba(23, 25, 48);
+    --color-accent: rgb(251, 222, 76);
+    --color-bg-darker: #12111d;
+    --color-bg-darker-hover: #262440;
+    --color-outline: #45406c;
+    --color-button:rgb(109, 115, 186);
+    --color-button-hover: rgb(90, 96, 160);
+    --text-color-main: #dfdfdf;
+    --text-color-sub: rgb(109, 115, 186);
 
     --profile-pic-size: 150px;
-    --aside-width: 23vw;
+    --aside-width: 395px;
+    --height: 94vh;
 
     font-family: "IBM Plex Sans", sans-serif;
+}
+
+h1,h2,h3,h4,p,i,ul,li{
+    color:var(--text-color-main)
+}
+
+.subtext{
+    color:var(--text-color-sub);
+
 }
 
 h1{
@@ -51,7 +66,7 @@ p{
     margin: 0;
     padding: 0;
     height:fit-content;
-    font-size:1rem;
+    font-size:1.1rem;
     font-weight:normal;
     text-decoration: none;
     color:var(--text-color-main);
@@ -74,8 +89,10 @@ aside{
     padding:20px;
     margin: 20px;
     
-    min-width: 160px;
+    min-width: 310px;
+    width: 23vw;
     max-width: var(--aside-width);
+    max-height:var(--height);
     flex-grow: 0;
     
     border-radius:15px;
@@ -169,7 +186,8 @@ aside{
 }
 
 #profile-name h3{
-    opacity:50%;
+    color:var(--text-color-sub);
+    font-weight: normal;
 }
 
 
@@ -194,12 +212,22 @@ aside{
     gap:10px;
     margin-top:20px;
 
-    align-items: center;
+    align-items: left;
     justify-content: left;
     max-width: var(--aside-width);
 
-    width:max-content;
+    width:100%;
     flex-wrap:wrap;
+}
+
+#socials > *{
+    padding:15px;
+    flex-grow:1;
+    justify-content: center;
+}
+
+.social-title{
+    display: none;
 }
 
 .button-light{
@@ -210,21 +238,27 @@ aside{
     align-items: center;
     gap: 8px;
 
-    background-color: var(--color-bg-darker);
+    background-color: none;
+    outline: 1px solid var(--color-outline);
     border-radius: 10px;
 
     transition: all 200ms linear;
 }
 
 .button-light:hover{
-    background-color: var(--color-bg-darker-hover);
+    background-color: var(--color-button);
+    outline: 2px solid var(--color-button);
+}
+
+.socials-item{
+    display:grid;
+    place-items: center;
+    width:1.5rem;
+    height:1.5rem;
 }
 
 .socials-item .fa-brands{
-    height:fit-content;
-    width:1rem;
-    height:1rem;
-
+    font-size: 1.2rem;
 }
 
 .button-light p{
@@ -237,6 +271,21 @@ aside{
     text-decoration: none;
     color:var(--text-color-main);
 }
+
+#nav-links{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top:20px;
+}
+
+#nav-links > *{
+    background-color: var(--color-bg-darker);
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+}
+
 
 #side-panel-footer{
     display:flex;
@@ -253,12 +302,15 @@ aside{
     display:flex;
     flex-direction:column;
     row-gap:20px;
+    height:var(--height);
+    border-radius:15px;
 
     margin:20px 20px 20px 0px;
 
-    overflow:scroll;
+    overflow-y:scroll;
     max-height:100%;
     max-width:inherit;
+    padding: 2px
 }
 
 .body-section-row{
@@ -267,14 +319,28 @@ aside{
 
     max-width: 100%;
     column-gap:20px;
+    
 }
 
-.body-section{
+.body-section-cont{
     background-color: var(--color-bg);
-    padding:20px 20px 20px 20px;
+    padding:25px 25px 25px 25px;
 
     border-radius:15px;
     /* flex-grow:1; */
+
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    max-width: 1000px;
+
+    outline: 2px solid var(--color-outline);
+}
+
+.body-section{
+    padding:20px 20px 20px 20px;
+
+    border-radius:15px;
 
     display:flex;
     flex-direction: column;
@@ -292,7 +358,7 @@ aside{
 }
 
 .photo-widget{
-    background-image: url("https://unsplash.com/photos/rFCE3SFmem0/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8Mnx8MTcyOTU4MDc0MXw&force=true&w=640");
+    background-image: url("https://cdn.wanderer.moe/genshin-impact/namecards/ui-namecardpic-wanderer-p.png");
     background-size: cover;
     min-width:20vw;
     max-width:500vw;
@@ -318,14 +384,61 @@ aside{
 }
 
 #intro-image{
-    width:70vw;
-    height:30vh;
+    width:500px;
+    height:25svh;
+    aspect-ratio: 1 / 1;
     
-    background-image:url("https://pbs.twimg.com/media/FpVs9b4aUAAcu5o?format=jpg&name=medium");
+    background-image:url("https://cdn.wanderer.moe/genshin-impact/emotes/paimon-s-paintings-set-11-2.png");
     background-size: cover;
     background-position:center;
     
     border-radius:10px;
+}
+
+.long-card-cont{
+    display:flex;
+    flex-direction:column;
+    width: 95%;
+    gap:5px;
+}
+
+
+.long-card-item{
+    display:flex;
+    flex-direction: row;
+
+    justify-content: flex-start;
+    align-items:center;
+
+    padding:10px 10px 10px 20px;
+
+    width:100%;
+    height:40px;
+    border-radius: 50px;
+
+    background-repeat:no-repeat;
+}
+
+#languages{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:nowrap;
+    gap:10px;
+    padding-left:0;
+    list-style: none;
+    list-style-position: outside;
+}
+
+#languages > li{
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    gap:7px;
+}
+
+#languages > li > i{
+    font-size:x-large;
+    color:var(--text-color-sub);
 }
 
 
@@ -381,7 +494,9 @@ aside{
 
     #body-cont{
         margin:0px 20px 0px 20px;
-        flex-wrap:wrap;
+        flex-direction:column;
+        height:100%;
+        overflow:none;
     }
 
     #body-cont > *{
@@ -399,5 +514,27 @@ aside{
     #body-cont .photo-widget{
         display:none;
         order:0;
+    }
+
+    #intro-image{
+        width:100px;
+        height:100px;
+        aspect-ratio: 1 / 1;
+        
+        background-image:url("https://cdn.wanderer.moe/genshin-impact/emotes/paimon-s-paintings-set-11-2.png");
+        background-size: cover;
+        background-position:center;
+        
+        border-radius:10px;
+    }
+
+    #languages{
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        gap:10px;
+        padding-left:0;
+        list-style: none;
+        list-style-position: outside;
     }
 }
