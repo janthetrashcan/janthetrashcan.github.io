@@ -537,4 +537,8 @@ aside{
         list-style: none;
         list-style-position: outside;
     }
+
+    #body-intro{
+        align-items: center;
+    }
 }
