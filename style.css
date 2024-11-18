@@ -15,7 +15,7 @@
 
     --profile-pic-size: 150px;
     --aside-width: 395px;
-    --height: 94vh;
+    --height: 90vh;
 
     font-family: "IBM Plex Sans", sans-serif;
 }
@@ -82,6 +82,8 @@ p{
 
     display: flex;
     flex: row;
+    justify-content:center;
+    align-items:center;
 }
 
 aside{
@@ -92,7 +94,7 @@ aside{
     min-width: 310px;
     width: 23vw;
     max-width: var(--aside-width);
-    max-height:var(--height);
+    height:var(--height);
     flex-grow: 0;
     
     border-radius:15px;
@@ -135,11 +137,12 @@ aside{
     margin: -20px;
     width: fill;
     height: 100px;
-    background-image: url(https://pbs.twimg.com/profile_banners/1499082535539671041/1727272244/1500x500);
-    background-position: center;
+    background-image: url('https://unsplash.com/photos/3QaGzeQbda8/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MTR8fGJsdWUlMjByZW5kZXJ8ZW58MHx8fHwxNzMxOTIyNzExfDA&force=true&w=640');
+    background-position-y: 60%;
     background-size:100%;
     
     overflow: hidden;
+    outline: none;
     transition: all 300ms 0ms ease-out;
 }
 
@@ -302,7 +305,7 @@ aside{
     display:flex;
     flex-direction:column;
     row-gap:20px;
-    height:var(--height);
+    height:calc(var(--height) + 4vh);
     border-radius:15px;
 
     margin:20px 20px 20px 0px;
@@ -447,6 +450,8 @@ aside{
 @media only screen and (max-width: 767px){
     #main-cont{
         flex-wrap:wrap;
+        justify-content:none;
+        align-items:none;
     }
 
     aside{
