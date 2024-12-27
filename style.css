@@ -3,15 +3,15 @@
 @import url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css');
 
 :root{
-    --color-bg: rgba(23, 25, 48);
-    --color-accent: rgb(251, 222, 76);
-    --color-bg-darker: #12111d;
-    --color-bg-darker-hover: #262440;
-    --color-outline: #45406c;
-    --color-button:rgb(109, 115, 186);
-    --color-button-hover: rgb(90, 96, 160);
+    --color-bg: rgb(39 39 42);
+    --color-accent: rgb(250 204 21);
+    --color-bg-darker: rgb(24 24 27);
+    --color-bg-darker-hover: rgb(39 39 42);
+    --color-outline: rgb(63 63 70);
+    --color-button:rgb(82 82 91);
+    --color-button-hover: rgb(82 82 91);
     --text-color-main: #dfdfdf;
-    --text-color-sub: rgb(109, 115, 186);
+    --text-color-sub: rgb(113 113 122);
 
     --profile-pic-size: 150px;
     --aside-width: 395px;
@@ -121,7 +121,7 @@ aside{
 }
 
 #profile-pic{
-    background-image: url("https://cdn.bsky.app/img/avatar/plain/did:plc:mh6pl3je7z3vknqx5vz4bwh3/bafkreieji7mqgn4ey2i3arvdhvz3iq7x45y7zgbkju73aqdqmaabtctj7a@jpeg");
+    background-image: url('assets/img/profile.jpg');
     
     position:absolute;
     aspect-ratio: 1 / 1;
@@ -361,8 +361,10 @@ aside{
 }
 
 .photo-widget{
-    background-image: url("https://cdn.wanderer.moe/genshin-impact/namecards/ui-namecardpic-wanderer-p.png");
+    background-image: url("https://images.unsplash.com/photo-1512775773181-4522b5be8327?q=80&w=3538&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-size: cover;
+    background-position-y: 70%;
+    filter: grayscale(100%);
     min-width:20vw;
     max-width:500vw;
     min-height:120px;
