@@ -454,6 +454,7 @@ aside{
         flex-wrap:wrap;
         justify-content:none;
         align-items:none;
+        margin-bottom: 12rem;
     }
 
     aside{
@@ -462,6 +463,7 @@ aside{
         max-width:none;
         flex-grow:1;
         order:0;
+        height:fit-content;
     }
 
     #side-panel-content{
