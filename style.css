@@ -312,8 +312,7 @@ aside{
 
     overflow-y:scroll;
     max-height:100%;
-    max-width:inherit;
-    padding: 2px
+    padding: 2px;
 }
 
 .body-section-row{
@@ -322,7 +321,6 @@ aside{
 
     max-width: 100%;
     column-gap:20px;
-    
 }
 
 .body-section-cont{
