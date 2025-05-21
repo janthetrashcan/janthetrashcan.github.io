@@ -10,6 +10,16 @@ const props = defineProps({
         type: String,
         default: '/',
         required: true
+    },
+    iconDefault: {
+        type: String,
+        default: 'mingcute:home-2-line',
+        required: false
+    },
+    iconSelected: {
+        type: String,
+        default: 'mingcute:home-2-fill',
+        required: false
     }
 })
 
@@ -23,6 +33,8 @@ const props = defineProps({
                 'font-bold text-primary hover:text-on-primary-bg bg-primary/10': $route.path === props.to,
             }"
             >
+
+            <Icon :name="$route.path !== props.to ? props.iconDefault : props.iconSelected" class="mr-3" />
             <p>{{ props.label }}</p>
         </NuxtLink>
 </template>

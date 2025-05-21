@@ -10,10 +10,23 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/ui'
   ],
+  fonts: {
+    families: [
+      {
+        name: 'Raleway',
+        provider: 'google',
+        weights: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+      },
+    ]
+  },
   css: ['~/assets/css/main.css'],
   vite: {
     plugins: [
       tailwindcss(),
     ],
   },
+  image: {
+    dir: 'public',
+    formats: ['webp', 'jpg', 'png'],
+  }
 });
