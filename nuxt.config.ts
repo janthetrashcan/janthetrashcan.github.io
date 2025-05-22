@@ -19,7 +19,16 @@ export default defineNuxtConfig({
       },
     ]
   },
-  css: ['~/assets/css/main.css'],
+  css: [
+    '~/assets/css/main.css',
+    '~/assets/css/transitions.css',
+  ],
+  app: {
+    // pageTransition: {
+    //   name: 'page',
+    //   mode: 'out-in'
+    // },
+  },
   vite: {
     plugins: [
       tailwindcss(),
@@ -27,6 +36,6 @@ export default defineNuxtConfig({
   },
   image: {
     dir: 'public',
-    formats: ['webp', 'jpg', 'png'],
+    formats: ['webp', 'jpg', 'png', 'svg'],
   }
 });

@@ -1,5 +1,5 @@
 <template>
-    <div class='flex flex-col w-full h-fit items-start justify-center px-4 py-4'>
+    <div class='flex flex-col w-full h-fit items-start justify-center'>
         <NuxtImg
             src="/img/logo-white.png"
             class="w-16 object-cover mb-8 mt-8 ml-4"
